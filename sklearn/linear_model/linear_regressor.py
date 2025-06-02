@@ -1,4 +1,8 @@
+# Authors: krishna simha <krishna2005simha@gmail.com>
+# License: BSD 3 clause
+
 import numpy as np
+
 from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 
@@ -40,7 +44,7 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
 
     loss_history_ : list
         List of loss values at each epoch.
-    Examples
+      Examples
     --------
     >>> from sklearn.linear_model import LinearRegressor
     >>> import numpy as np
@@ -49,7 +53,7 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
     >>> model = LinearRegressor(epochs=1000, learning_rate=0.01)
     >>> model.fit(X, y)
     >>> model.predict([[4]])
-    array([9.])
+    array([9.]
     """
 
     def __init__(
@@ -135,3 +139,4 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
         check_is_fitted(self, ["coef_", "intercept_"])
         X = check_array(X)
         return X @ self.coef_ + self.intercept_
+
